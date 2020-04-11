@@ -1,9 +1,10 @@
 import java.util.Scanner;
+import java.util.Random;
 //import java.lang.Math;
 public class HomeWork1{
-	public static void main1(String[] args) {
+	/*public static void main1(String[] args) {*/
 		// 给定两个int变量, 交换变量的值
-		int a = 10;
+	/*	int a = 10;
 		int b = 20;
 		int tmp = a;
 		a = b;
@@ -32,11 +33,11 @@ public class HomeWork1{
 			c = tmp;
 		}
 		System.out.println(a); // 20
-		System.out.println(c); // 10
-	}
+		System.out.println(c); // 10*/
+/*	}
+}*/
 
-
-	public static void main2(String[] args) {
+	/*public static void main2(String[] args) {
 		// 根据年龄, 来打印出当前年龄的人是少年(低于18), 青年(19 - 28), 中年(29 - 55), 老年(56以上)
 		Scanner scan = new Scanner(System.in);
 		int age = scan.nextInt();
@@ -52,8 +53,8 @@ public class HomeWork1{
 			System.out.println("老年");
 		}
 	}
-
-	public static void main3(String[] args) {
+}*/
+	/*public static void main3(String[] args) {
 		// 判断一个数字是否是素数
 		// 素数: 一个大于1的正整数, 除了1和它本身以外, 不能被其他正整数整除
 		Scanner scan = new Scanner(System.in);
@@ -71,42 +72,39 @@ public class HomeWork1{
 		if(i == num) {
 			System.out.println("是素数");
 		}
-		
+	}
+}	*/
 		// 打印1 - 100 之间所有的素数
-		int i = 1;
-		for(i = 1; i <= 100; i++) {
-			if(i < 2) {
-				System.out.println("");
-			}
+		/*for(int i = 1; i <= 100; i++) {
 			int j = 2;
-			for(j = 2; j < i; j++) {
+			for( ; j <= (int)Math.sqrt(i); j++) {
 				if(i % j == 0) {
 					break;
 				}
 			}
-			if(j == i) {
+			if(j > (int)Math.sqrt(i)) {
 				System.out.println(i);
 			}
 		}
 		
-	}
+	}*/
 
 
-	public static void main4(String[] args) {
+/*	public static void main4(String[] args) {
 		// 输出1000到2000之间所有的闰年
-		int year = 1000;
+/*		int year = 1000;
 		int count = 0;
 		for(year = 1000; year <= 2000; year++) {
 			if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
-				System.out.print("" + year + ",");
+				System.out.print("" + year + " ");
 				count++;
 			}
 		}
 		System.out.println("");
-		System.out.println(count); // 243
-	}
+		System.out.println(count); // 243*/
+	//}
 
-	public static void main5(String[] args) {
+	/*public static void main5(String[] args) {
 		// 输出乘法口诀表
 		int i = 1; 
 		for(i = 1; i <= 9; i++) {
@@ -117,9 +115,9 @@ public class HomeWork1{
 			}
 			System.out.println();
 		}
-	}
+	}*/
 
-	public static void main6(String[] args) {
+	/*public static void main6(String[] args) {
 		// 求两个正整数的最大公约数
 		Scanner scan = new Scanner(System.in);
 		int a = scan.nextInt();
@@ -136,9 +134,23 @@ public class HomeWork1{
 			i--;
 		}
 	}
+*/
+/*
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int a = scan.nextInt();
+		int b = scan.nextInt();
+		// 辗转相除法
+		int c = b;
+		while(a % b != 0) {
+			c = a % b;
+			a = b;
+			b = c;
+		}
+		System.out.println(c);
+	}*/
 
-
-	public static void main7(String[] args) {
+/*	public static void main(String[] args) {
 		// 计算 1/1 - 1/2 + 1/3 - 1/4 + 1/5 ...... + 1/99 - 1/100
 		int i = 1;
 		double j = 1.0;
@@ -148,13 +160,14 @@ public class HomeWork1{
 			j = -j;
 		}
 		System.out.println(ret);
-	}
+	}*/
 
-
-	public static void main8(String[] args) {
-		// 编写程序计算一下 1 - 100 中有多少个数字9
-		// 个位: 9 19 29 39 49 59 69 79 89 99
-		// 十位: 90 91 92 93 94 95 96 97 98 99
+ 	/*
+ 	* 编写程序计算一下 1 - 100 中有多少个数字9
+	* 个位: 9 19 29 39 49 59 69 79 89 99
+	* 十位: 90 91 92 93 94 95 96 97 98 99
+ 	*/
+	/*public static void main8(String[] args) {
 		int i = 1;
 		int count = 0;
 		for(i = 1; i <= 100; i++) {
@@ -167,24 +180,82 @@ public class HomeWork1{
 		}
 		System.out.println(count);
 	}
+*/
 
 
-	public static void main(String[] args) {
-		
+	/**
+	 * 求出 0 - 999 之间的水仙花数
+	 * @param args [description]
+	 */
+	/*public static void main(String[] args) {
 		int i = 0;
-		double sum = 0;
-		for(i = 0; i <= 999; i++) {
-			int j = i;
-			if(j > 99) {
-				while(j != 0) {
-					sum = sum + Math.pow((j % 10), 3);
-					j /= 10;
-				}
-				if(sum == i) {
-					System.out.println(i);
-				}
-				sum = 0;
-			} 
+		int sum = 0;
+		for(; i <= 999; i++) {
+			// 1. 确定数字总共有多少位
+			int tmp = i;
+			int count = 0;
+			while(tmp != 0) { // 153
+				count++;
+				tmp /= 10;
+			}
+			tmp = i;
+			// 2. 计算该数字各个位数之和
+			while(tmp != 0) { // 153
+				sum += Math.pow((tmp % 10), count);
+				tmp /= 10;
+			}
+			// 3. 进行比较判断
+			if(sum == i) {
+				System.out.println(i);
+			}
+			sum = 0;
 		}
 	}
-}
+*/
+
+	/**
+	 * 完成猜数字游戏
+	 * 用户输入数字，判断该数字是大于，小于，还是等于随机生成的数字，等于的时候退出程序。
+	 * @param args [description]
+	 */
+/*	public static void main(String[] args) {
+		// 1. 生成一个随机数
+		Random random = new Random();
+		int randomNum = random.nextInt(100); // [0, 100)
+		while(true) {
+			// 2. 用户输入猜测的数字
+			Scanner scan = new Scanner(System.in);
+			System.out.println("请输入您猜测的数字: ");
+			int guessNum = scan.nextInt();
+			if(guessNum > randomNum) {
+				System.out.println("高了");
+			} else if(guessNum < randomNum) {
+				System.out.println("低了");
+			} else {
+				System.out.println("恭喜你, 猜对了");
+				break;
+			}
+		}
+	}*/
+
+	/**
+	 * 求一个整数，在内存当中存储时，二进制1的个数
+	 * @param args [description]
+	 */
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int num = scan.nextInt(); 
+		int count = 0;
+		int i = 0;
+		for(i = 0; i < 32; i++){
+			if(((num >> i) & 1) == 1) {
+				count++;
+			}
+		}
+		System.out.println(count);
+	}
+}	
+
+
+// 10000000000000000000000000000001
+// 11111111111111111111111111111111
