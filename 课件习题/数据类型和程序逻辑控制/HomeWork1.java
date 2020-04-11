@@ -104,14 +104,16 @@ public class HomeWork1{
 		System.out.println(count); // 243*/
 	//}
 
-	/*public static void main5(String[] args) {
+/*	public static void main(String[] args) {
 		// 输出乘法口诀表
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
 		int i = 1; 
-		for(i = 1; i <= 9; i++) {
+		for(i = 1; i <= n; i++) {
 			int j = 1;
 			for(j = 1; j <= i; j++) {
 				int ret = i * j;
-				System.out.print(i + "*" + j + "=" + ret + " ");
+				System.out.print(i + "*" + j + "=" + ret + "  ");
 			}
 			System.out.println();
 		}
@@ -242,7 +244,7 @@ public class HomeWork1{
 	 * 求一个整数，在内存当中存储时，二进制1的个数
 	 * @param args [description]
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int num = scan.nextInt(); 
 		int count = 0;
@@ -253,9 +255,71 @@ public class HomeWork1{
 			}
 		}
 		System.out.println(count);
+	}*/
+
+	/**
+	 * 获取一个数二进制序列中所有的偶数位和奇数位， 分别输出二进制序列
+	 * @param args [description]
+	 */
+/*	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int num = scan.nextInt();
+		// 00000000000000000000000000001101 --13
+		// 0000000000000011 --奇数
+		// 0000000000000010 --偶数
+		// 打印偶数位
+		int i = 31;
+		for(i = 31; i >= 1; i -= 2) {
+			System.out.print((num >> i) & 1);
+		}
+		System.out.println();
+		// 打印奇数位
+		int j = 30;
+		for(j = 30; j >= 0; j -= 2) {
+			System.out.print((num >> j) & 1);
+		}
+	}*/
+
+	/**
+	 * 模拟登陆
+	 * 编写代码模拟三次密码输入的场景. 最多能输入三次密码
+	 * 密码正确提示"登录成功"
+	 * 密码错误, 可以重新输入,最多输入三次,. 三次均错误, 则提示退出程序
+	 * @param args [description]
+	 */
+	/*public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int count = 3;
+		while(count != 0) {
+			System.out.println("请输入密码");
+		  	String passWord = scan.nextLine();
+		  	if(passWord.equals("123456")) {
+		  		System.out.println("登录成功");
+		  		break;
+		  	} else {
+		  		count--;
+		  		System.out.println("你还有" + count + "次机会");
+		  	}
+		}
+
+	}*/
+
+	/**
+	 * 输出一个整数的每一位
+	 * 如：123的每一位是1 ， 2 ， 3
+	 * @param args [description]
+	 */
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int num = scan.nextInt();
+		print(num);
+	}
+	public static void print(int num) {
+		if(num > 9) {
+			print(num / 10);
+		} 
+		System.out.print((num % 10) + " ");
 	}
 }	
 
 
-// 10000000000000000000000000000001
-// 11111111111111111111111111111111
