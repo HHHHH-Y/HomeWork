@@ -1,8 +1,107 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class HomeWork {
-    public static void main(String[] args) {
+    public static void main10(String[] args) {
+        // 递归求解汉诺塔
+        hanoi(3, 'A', 'B', 'C');
+    }
+    public static void hanoi(int n, char pose1, char pose2, char pose3) {
+        if(n == 1) {
+            move(pose1, pose3);
+        } else {
+            hanoi(n-1, pose1 , pose3, pose2);
+            move(pose1, pose3);
+            hanoi(n -1, pose2, pose1, pose3);
+        }
+    }
+    public static void move(char pose1, char pose2) {
+        System.out.print(pose1 + "-->" + pose2 + " ");
+    }
+
+
+    public static void main9(String[] args) {
+        // 在同一个类中,分别定义求两个整数的方法和三个小数之和的方法。并执行代码，求出结果
+        Scanner scanner = new Scanner(System.in);
+        int num1 = scanner.nextInt();
+        int num2 = scanner.nextInt();
+        System.out.println(add(num1, num2));
+        double n1 = scanner.nextDouble();
+        double n2 = scanner.nextDouble();
+        double n3 = scanner.nextDouble();
+        System.out.println(add(n1, n2, n3));
+    }
+    public static int add(int num1, int num2) {
+        return num1 + num2;
+    }
+    public static double add(double num1, double num2, double num3) {
+        return num1 + num2 + num3;
+    }
+
+    public static void main8(String[] args) {
+        // 在同一个类中定义多个方法(方法的重载)
+        // 要求不仅可以求两个整数的最大值，还可以求两个小数的最大值，以及两个小数和一个整数的大小关系
+        int a = 10;
+        int b = 20;
+        System.out.println(max(a, b)); // 20
+        double d1 = 3.14;
+        double d2 = 5.12;
+        System.out.println(max(d1, d2)); // 5.12
+        double d3 = 8.88;
+        double d4 = 6.66;
+        int c = 5;
+        System.out.println(max(d3, d4, c)); // 8
+    }
+    public static int max(int num1, int num2) {
+        return (num1 > num2 ? num1 : num2);
+    }
+    public static double max(double num1, double num2) {
+        return (num1 > num2 ? num1 : num2);
+    }
+    public static int max(double num1, double num2, int num3) {
+        return ((int)max(num1, num2) > num3 ? (int)max(num1, num2) : num3);
+    }
+
+
+    public static void main7(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int c = scanner.nextInt();
+        System.out.println(max2(a, b));
+        System.out.println(max3(a, b, c));
+    }
+    public static int max2(int num1, int num2) {
+        return (num1 > num2 ? num1 : num2);
+    }
+    public static int max3(int num1, int num2, int num3) {
+        return max2(max2(num1, num2), num3);
+    }
+
+
+    public static void main6(String[] args) {
         // 调整数组顺序使得奇数位于偶数之前。调整之后，不关心大小顺序。
+        int[] array =  {1, 3, 2, 7, 6, 4, 5, 9, 10};
+        int[] ret = adjust(array);
+        System.out.println(Arrays.toString(ret));
+    }
+    public static int[] adjust(int[] arr) {
+        int left = 0;
+        int right = arr.length - 1;
+        while(left < right) {
+            while(left < right && arr[left] % 2 != 0) {
+                left++;
+            }
+            while (left < right && arr[right] % 2 == 0) {
+                right--;
+            }
+            if(left < right) {
+                int tmp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = tmp;
+            }
+        }
+        return arr;
     }
 
 
