@@ -2,21 +2,69 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class HomeWork {
-    public static void main10(String[] args) {
-        // 递归求解汉诺塔
-        hanoi(3, 'A', 'B', 'C');
+    public static void main(String[] args) {
+        // 递归求n的阶乘
+        System.out.println(func(5));
     }
-    public static void hanoi(int n, char pose1, char pose2, char pose3) {
+    public static int func(int n) {
         if(n == 1) {
-            move(pose1, pose3);
-        } else {
-            hanoi(n-1, pose1 , pose3, pose2);
-            move(pose1, pose3);
-            hanoi(n -1, pose2, pose1, pose3);
+            return 1;
         }
+        return n * func(n - 1);
     }
-    public static void move(char pose1, char pose2) {
-        System.out.print(pose1 + "-->" + pose2 + " ");
+
+
+    public static void main13(String[] args) {
+        // 递归求和 1 + 2 + 3 + ... + 10
+        System.out.println(sum1(10));
+    }
+    public static int sum1(int n) {
+        if(n == 1) {
+            return 1;
+        }
+        return n + sum1(n - 1);
+    }
+
+
+    public static void main12(String[] args) {
+        // 用递归的方式按顺序打印一个数字的每一位(例如 1234 打印出 1 2 3 4)
+        print(1234);
+    }
+    public static void print(int n) {
+        if(n > 9) {
+            print(n / 10);
+        }
+        System.out.print(n % 10 + " ");
+    }
+
+
+    public static void main11(String[] args) {
+        // 写一个递归方法，输入一个非负整数，返回组成它的数字之和
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        System.out.println(sum(n));
+    }
+    public static int sum(int n) {
+        if(n < 10) {
+            return n % 10;
+        }
+        return ((n % 10) + sum(n / 10));
+    }
+
+
+
+    public static void main10(String[] args) {
+        // 递归求斐波那契数列第N项
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        System.out.println(fabonacci1(n));
+    }
+    public static int fabonacci1(int n) {
+        if(n == 1 || n == 2) {
+            return 1;
+        } else {
+            return fabonacci1(n - 1) + fabonacci1(n - 2);
+        }
     }
 
 
