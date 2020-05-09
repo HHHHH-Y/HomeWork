@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../数组的创建和使用/数组的创建和使用.iml" filepath="$PROJECT_DIR$/../数组的创建和使用/数组的创建和使用.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../JavaSE/Java基础语法/数组的定义与使用/数组的定义与使用.iml" filepath="$PROJECT_DIR$/../../../JavaSE/Java基础语法/数组的定义与使用/数组的定义与使用.iml" />
       <module fileurl="file://$PROJECT_DIR$/方法的使用.iml" filepath="$PROJECT_DIR$/方法的使用.iml" />
     </modules>
   </component>
