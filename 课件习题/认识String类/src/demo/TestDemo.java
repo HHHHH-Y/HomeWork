@@ -12,6 +12,7 @@ public class TestDemo {
     public static String[] split(String str) {
         Scanner scanner = new Scanner(System.in);
         // 输入分割符
+        char simple = scanner.next().charAt(0);
 
 
     }
